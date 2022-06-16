@@ -9,6 +9,8 @@ import java.util.Objects;
 public class Money {
     private final BigDecimal amount; // final key wordu bu class imizi "immutuble yapiyor"
 
+    public static final Money ZERO = new Money( BigDecimal.ZERO);
+
     public Money(BigDecimal amount) {
         this.amount = amount;
     }
@@ -26,7 +28,7 @@ public class Money {
 
     }
 
-    public Money addMoney(Money money){
+    public Money add(Money money){
         return new Money(setScale(this.amount.add(money.getAmount())));
     }
 
@@ -51,6 +53,6 @@ public class Money {
     }
 
     private BigDecimal setScale(BigDecimal input){
-        return  input.setScale(2, RoundingMode.HALF_EVEN);K
+        return  input.setScale(2, RoundingMode.HALF_EVEN);
     }
 }
