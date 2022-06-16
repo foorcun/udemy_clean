@@ -19,7 +19,7 @@ public class Order extends AggregateRoot<OrderId> {
     private TrackingId trackingId;
     private OrderStatus orderStatus;
 
-     void initializeOrder(){
+   public   void initializeOrder(){
         setId(new OrderId(UUID.randomUUID()));
         trackingId = new TrackingId(UUID.randomUUID());
         orderStatus = orderStatus.PENDING;

@@ -7,6 +7,14 @@ import com.food.ordering.system.domain.valueobject.ProductId;
 public class Product extends BaseEntity<ProductId> {
     private   String name;
 
+    private Money price;
+
+
+    public void  updateWithConfirmedNamedAndPrice(String name , Money price){
+        this.name=name;
+        this.price =price;
+    }
+
     public String getName() {
         return name;
     }
@@ -22,6 +30,4 @@ public class Product extends BaseEntity<ProductId> {
     }
 
 
-
-    private Money price;
 }
